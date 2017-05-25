@@ -1,0 +1,6 @@
+entidade\Piada.class
+entidade\HibernateUtil.class
+entidade\PiadaDAO.class
+aplicacao\PiadaController.class
+entidade\Autor.class
+aplicacao\Application.class

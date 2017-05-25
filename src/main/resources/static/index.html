@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+       
+    </head>
+    <body ng-app="piadaapp" ng-controller="piadactrl">
+        <button ng-click="mostrarform = !mostrarform">Add piada</button>
+        <div ng-show="mostrarform">
+            nome: <input type="text" ng-model="piada.nome"> <br>
+            texto: <input type="text" ng-model="piada.texto"> <br>
+            nota: <input type="number" ng-model="piada.nota"> <br>
+            adulta <input type="checkbox" ng-model="piada.adulta"><br>
+            autor: <input type="text" ng-model="piada.autor.nome"><br/>
+            <button ng-click="salvar(piada)">Salvar</button>
+
+            <br/>
+            <h1 ng-show="enviando">Enviando...</h1> 
+            <h2>{{mensagem}}</h2>
+        </div>
+        <button ng-click="listar()">Buiscarbn </button>
+        <h1 ng-show="buscando">Buscando...</h1>
+        
+        <table border="1px" ng-show="piadas">
+            <thead>
+                <th>nome</th>
+                <th>texto</th>
+                <th>adulta?</th>
+                <th>deletar</th>
+            </thead>
+            <tr ng-repeat="piada in piadas">
+                <td>{{piada.nome}}</td>
+                <td>{{piada.texto}}</td>
+                <td>{{piada.adulta}}</td>                  
+                <td><button ng-click="deletar(piada)">delete</button></td>
+            </tr>
+        </table>
+        
+        <script src="app.js"></script>
+    </body>
+    
+</html>
