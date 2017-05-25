@@ -36,7 +36,7 @@ app.controller("piadactrl", function($scope, $http){
     
     $scope.listar = function(){
         $scope.buscando = true;
-        $http.get("http://piadas.herokuapp.com/piada")
+        $http.get("/piada")
                 .then(function(result){
                    $scope.buscando=false;
                    console.log(result);
@@ -51,7 +51,7 @@ app.controller("piadactrl", function($scope, $http){
     $scope.salvar = function(piada){
         $scope.enviando=true;
         console.log(piada);
-        $http.put("http://piada.herokuapp.com/piada/",piada)
+        $http.put("/piada",piada)
                 .then(function(result){
                    $scope.enviando=false;
                    $scope.mensagem="Piada cadastrada com sucesso";
