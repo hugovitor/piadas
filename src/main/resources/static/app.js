@@ -2,7 +2,7 @@ var app = angular.module("piadaapp",['ngRoute']);
 
 
 app.controller("ListarController", function($scope, $http){
-    $http.get("http://piada.herokuapp.com/piada")
+    $http.get("http://piadas.herokuapp.com/piada")
                 .then(function(result){
                    $scope.buscando=false;
                    console.log(result);
@@ -36,7 +36,7 @@ app.controller("piadactrl", function($scope, $http){
     
     $scope.listar = function(){
         $scope.buscando = true;
-        $http.get("http://piada.herokuapp.com/piada")
+        $http.get("http://piadas.herokuapp.com/piada")
                 .then(function(result){
                    $scope.buscando=false;
                    console.log(result);
